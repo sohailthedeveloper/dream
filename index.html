@@ -1,453 +1,500 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dream Doors Realty | Luxury Real Estate in Pune</title>
-  <meta name="description" content="Dream Doors Realty - Luxury flats, villas, and investment opportunities in Pune." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <style>
-    :root{
-      --bg:#07070a;
-      --bg2:#0d1016;
-      --card:rgba(255,255,255,.07);
-      --card2:rgba(255,255,255,.04);
-      --text:#f6f1e7;
-      --muted:#b6b1a8;
-      --gold:#d4af37;
-      --gold2:#f0d67a;
-      --line:rgba(212,175,55,.2);
-      --shadow:0 20px 80px rgba(0,0,0,.55);
-      --radius:24px;
-    }
-    *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{
-      background:
-        radial-gradient(circle at top left, rgba(212,175,55,.09), transparent 30%),
-        radial-gradient(circle at top right, rgba(255,255,255,.05), transparent 25%),
-        linear-gradient(180deg, #050507 0%, #0a0b10 40%, #07070a 100%);
-      color:var(--text);
-      font-family:'Poppins',sans-serif;
-      overflow-x:hidden;
-    }
-    a{text-decoration:none;color:inherit}
-    img{max-width:100%;display:block}
-    .container{width:min(1200px,92%);margin:0 auto}
-    .nav{
-      position:fixed;top:0;left:0;right:0;z-index:1000;
-      backdrop-filter:blur(18px);
-      background:rgba(5,5,7,.35);
-      border-bottom:1px solid rgba(255,255,255,.06);
-    }
-    .nav-inner{
-      height:78px;display:flex;align-items:center;justify-content:space-between;gap:18px;
-    }
-    .logo{
-      display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:.5px;
-    }
-    .logo-mark{
-      width:42px;height:42px;border-radius:14px;
-      background:linear-gradient(135deg,var(--gold),#7a5d12);
-      box-shadow:0 10px 30px rgba(212,175,55,.25);
-      display:grid;place-items:center;color:#121212;font-weight:800;
-    }
-    .logo span{font-family:'Montserrat',sans-serif}
-    .nav-links{display:flex;align-items:center;gap:24px;color:var(--muted);font-size:14px}
-    .nav-links a:hover{color:var(--gold2)}
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;gap:10px;
-      padding:14px 22px;border-radius:999px;border:1px solid rgba(212,175,55,.35);
-      background:linear-gradient(180deg, rgba(212,175,55,.18), rgba(212,175,55,.08));
-      color:var(--text);font-weight:600;transition:.35s ease;box-shadow:var(--shadow)
-    }
-    .btn:hover{transform:translateY(-3px);border-color:var(--gold);box-shadow:0 18px 50px rgba(212,175,55,.15)}
-    .btn.primary{background:linear-gradient(135deg,var(--gold),#8b6916);color:#121212;border:none}
-    .btn.dark{background:rgba(255,255,255,.04)}
-    .hero{
-      position:relative;min-height:100vh;display:flex;align-items:center;padding-top:78px;
-      overflow:hidden;
-    }
-    .hero video{
-      position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.38) contrast(1.05) saturate(1.05);
-    }
-    .hero::after{
-      content:"";position:absolute;inset:0;background:linear-gradient(90deg, rgba(5,5,7,.88), rgba(5,5,7,.55), rgba(5,5,7,.75));
-    }
-    .hero-content{
-      position:relative;z-index:2;width:min(1100px,92%);margin:0 auto;padding:80px 0;
-      display:grid;grid-template-columns:1.15fr .85fr;gap:42px;align-items:center;
-    }
-    .eyebrow{
-      display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border-radius:999px;
-      border:1px solid rgba(212,175,55,.25);background:rgba(255,255,255,.04);
-      color:var(--gold2);font-size:13px;letter-spacing:.6px;text-transform:uppercase;
-    }
-    .hero h1{
-      font-family:'Montserrat',sans-serif;
-      font-size:clamp(3rem,6vw,5.9rem);line-height:.95;margin:20px 0 18px;
-      letter-spacing:-1.8px;
-    }
-    .hero p{color:var(--muted);font-size:1.05rem;line-height:1.8;max-width:640px}
-    .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
-    .hero-card{
-      background:linear-gradient(180deg, rgba(255,255,255,.1), rgba(255,255,255,.04));
-      border:1px solid rgba(255,255,255,.12);backdrop-filter:blur(24px);
-      border-radius:28px;padding:28px;box-shadow:var(--shadow)
-    }
-    .mini-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:18px}
-    .mini{
-      padding:16px;border-radius:18px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08)
-    }
-    .mini h4{font-size:20px;color:var(--gold2);margin-bottom:5px}
-    section{padding:100px 0}
-    .section-head{margin-bottom:28px}
-    .section-head h2{
-      font-family:'Montserrat',sans-serif;font-size:clamp(2rem,3.2vw,3.3rem);letter-spacing:-1px;margin-bottom:10px
-    }
-    .section-head p{color:var(--muted);max-width:760px;line-height:1.8}
-    .about-grid,.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
-    .glass{
-      background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
-      border:1px solid rgba(255,255,255,.11);
-      backdrop-filter:blur(20px);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-    }
-    .about-box{padding:28px}
-    .feature-list{display:grid;gap:14px;margin-top:20px}
-    .feature-item{
-      padding:16px 18px;border-radius:18px;background:rgba(0,0,0,.18);border:1px solid rgba(212,175,55,.12);
-      display:flex;gap:12px;align-items:flex-start
-    }
-    .dot{width:10px;height:10px;border-radius:50%;background:var(--gold);margin-top:8px;flex:none;box-shadow:0 0 0 6px rgba(212,175,55,.1)}
-    .props-grid,.services-grid,.testimonials-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
-    .prop-card{
-      overflow:hidden;border-radius:28px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);
-      box-shadow:var(--shadow);transition:.35s ease
-    }
-    .prop-card:hover{transform:translateY(-8px);border-color:rgba(212,175,55,.35)}
-    .prop-img{height:270px;position:relative;overflow:hidden}
-    .prop-img img{width:100%;height:100%;object-fit:cover;transition:.5s ease}
-    .prop-card:hover .prop-img img{transform:scale(1.06)}
-    .price-tag{
-      position:absolute;top:18px;left:18px;background:rgba(7,7,10,.72);backdrop-filter:blur(14px);
-      padding:10px 14px;border-radius:999px;border:1px solid rgba(212,175,55,.35);color:var(--gold2);font-weight:700
-    }
-    .prop-body{padding:22px}
-    .prop-body h3{font-size:1.4rem;margin-bottom:8px}
-    .prop-body .loc{color:var(--gold2);margin-bottom:10px;font-weight:600}
-    .prop-body p{color:var(--muted);line-height:1.7;margin-bottom:18px}
-    .service-card,.testimonial-card{
-      padding:26px;border-radius:24px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08)
-    }
-    .service-card h3,.testimonial-card h3{margin:12px 0 10px}
-    .icon{
-      width:54px;height:54px;border-radius:18px;display:grid;place-items:center;
-      background:linear-gradient(135deg, rgba(212,175,55,.25), rgba(212,175,55,.07));
-      border:1px solid rgba(212,175,55,.2);color:var(--gold2);font-size:24px
-    }
-    .testimonial-card p{color:var(--muted);line-height:1.8;margin-top:12px}
-    .stars{color:var(--gold2);letter-spacing:2px}
-    .contact-form{
-      padding:28px
-    }
-    .form-group{display:grid;gap:14px}
-    input,textarea{
-      width:100%;padding:16px 18px;border-radius:16px;border:1px solid rgba(255,255,255,.1);
-      background:rgba(0,0,0,.18);color:var(--text);outline:none;font-family:inherit
-    }
-    input:focus,textarea:focus{border-color:var(--gold)}
-    textarea{min-height:140px;resize:vertical}
-    .footer{
-      padding:36px 0;border-top:1px solid rgba(255,255,255,.08);
-      background:rgba(0,0,0,.22)
-    }
-    .footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap}
-    .footer small{color:var(--muted)}
-    .whatsapp-float{
-      position:fixed;right:22px;bottom:22px;z-index:9999;width:62px;height:62px;border-radius:50%;
-      display:grid;place-items:center;background:#25d366;color:#fff;font-size:30px;
-      box-shadow:0 18px 40px rgba(37,211,102,.35);transition:.3s ease
-    }
-    .whatsapp-float:hover{transform:translateY(-4px) scale(1.03)}
-    .muted{color:var(--muted)}
-    .tag{
-      display:inline-block;margin-top:12px;padding:8px 12px;border-radius:999px;
-      background:rgba(212,175,55,.12);border:1px solid rgba(212,175,55,.18);color:var(--gold2);font-size:13px
-    }
-    @media (max-width: 980px){
-      .hero-content,.about-grid,.contact-grid,.props-grid,.services-grid,.testimonials-grid{grid-template-columns:1fr}
-      .nav-links{display:none}
-      .hero{min-height:auto}
-      .hero-content{padding:60px 0 70px}
-      .prop-img{height:240px}
-    }
-    @media (max-width: 560px){
-      .hero h1{font-size:2.7rem}
-      .btn{width:100%}
-      .hero-actions{flex-direction:column}
-      .mini-grid{grid-template-columns:1fr}
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dream Doors Realty | Luxury Real Estate in Pune</title>
+<meta name="description" content="Dream Doors Realty - Luxury flats, villas, and investment opportunities in Pune." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root{
+--bg:#07070a;
+--bg2:#0d1016;
+--card:rgba(255,255,255,.07);
+--card2:rgba(255,255,255,.04);
+--text:#f6f1e7;
+--muted:#b6b1a8;
+--gold:#d4af37;
+--gold2:#f0d67a;
+--line:rgba(212,175,55,.2);
+--shadow:0 20px 80px rgba(0,0,0,.55);
+--radius:24px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+background:
+radial-gradient(circle at top left, rgba(212,175,55,.09), transparent 30%),
+radial-gradient(circle at top right, rgba(255,255,255,.05), transparent 25%),
+linear-gradient(180deg, #050507 0%, #0a0b10 40%, #07070a 100%);
+color:var(--text);
+font-family:'Poppins',sans-serif;
+overflow-x:hidden;
+}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.container{width:min(1200px,92%);margin:0 auto}
+.nav{
+position:fixed;top:0;left:0;right:0;z-index:1000;
+backdrop-filter:blur(18px);
+background:rgba(5,5,7,.35);
+border-bottom:1px solid rgba(255,255,255,.06);
+}
+.nav-inner{
+height:78px;display:flex;align-items:center;justify-content:space-between;gap:18px;
+}
+.logo{
+display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:.5px;
+}
+.logo-mark{
+width:42px;height:42px;border-radius:14px;
+background:linear-gradient(135deg,var(--gold),#7a5d12);
+box-shadow:0 10px 30px rgba(212,175,55,.25);
+display:grid;place-items:center;color:#121212;font-weight:800;
+overflow:hidden;
+}
+.logo-mark img{
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
+}
+.logo span{font-family:'Montserrat',sans-serif}
+.nav-links{display:flex;align-items:center;gap:24px;color:var(--muted);font-size:14px}
+.nav-links a:hover{color:var(--gold2)}
+.btn{
+display:inline-flex;align-items:center;justify-content:center;gap:10px;
+padding:14px 22px;border-radius:999px;border:1px solid rgba(212,175,55,.35);
+background:linear-gradient(180deg, rgba(212,175,55,.18), rgba(212,175,55,.08));
+color:var(--text);font-weight:600;transition:.35s ease;box-shadow:var(--shadow)
+}
+.btn:hover{transform:translateY(-3px);border-color:var(--gold);box-shadow:0 18px 50px rgba(212,175,55,.15)}
+.btn.primary{background:linear-gradient(135deg,var(--gold),#8b6916);color:#121212;border:none}
+.btn.dark{background:rgba(255,255,255,.04)}
+.hero{
+position:relative;min-height:100vh;display:flex;align-items:center;padding-top:78px;
+overflow:hidden;
+}
+.hero video{
+position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.38) contrast(1.05) saturate(1.05);
+}
+.hero::after{
+content:"";position:absolute;inset:0;background:linear-gradient(90deg, rgba(5,5,7,.88), rgba(5,5,7,.55), rgba(5,5,7,.75));
+}
+.hero-content{
+position:relative;z-index:2;width:min(1100px,92%);margin:0 auto;padding:80px 0;
+display:grid;grid-template-columns:1.15fr .85fr;gap:42px;align-items:center;
+}
+.eyebrow{
+display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border-radius:999px;
+border:1px solid rgba(212,175,55,.25);background:rgba(255,255,255,.04);
+color:var(--gold2);font-size:13px;letter-spacing:.6px;text-transform:uppercase;
+}
+.hero h1{
+font-family:'Montserrat',sans-serif;
+font-size:clamp(3rem,6vw,5.9rem);line-height:.95;margin:20px 0 18px;
+letter-spacing:-1.8px;
+}
+.hero p{color:var(--muted);font-size:1.05rem;line-height:1.8;max-width:640px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+.hero-card{
+background:linear-gradient(180deg, rgba(255,255,255,.1), rgba(255,255,255,.04));
+border:1px solid rgba(255,255,255,.12);backdrop-filter:blur(24px);
+border-radius:28px;padding:28px;box-shadow:var(--shadow)
+}
+.mini-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:18px}
+.mini{
+padding:16px;border-radius:18px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08)
+}
+.mini h4{font-size:20px;color:var(--gold2);margin-bottom:5px}
+section{padding:100px 0}
+.section-head{margin-bottom:28px}
+.section-head h2{
+font-family:'Montserrat',sans-serif;font-size:clamp(2rem,3.2vw,3.3rem);letter-spacing:-1px;margin-bottom:10px
+}
+.section-head p{color:var(--muted);max-width:760px;line-height:1.8}
+.about-grid,.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.glass{
+background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+border:1px solid rgba(255,255,255,.11);
+backdrop-filter:blur(20px);
+border-radius:var(--radius);
+box-shadow:var(--shadow);
+}
+.about-box{padding:28px}
+.feature-list{display:grid;gap:14px;margin-top:20px}
+.feature-item{
+padding:16px 18px;border-radius:18px;background:rgba(0,0,0,.18);border:1px solid rgba(212,175,55,.12);
+display:flex;gap:12px;align-items:flex-start
+}
+.dot{width:10px;height:10px;border-radius:50%;background:var(--gold);margin-top:8px;flex:none;box-shadow:0 0 0 6px rgba(212,175,55,.1)}
+.props-grid,.services-grid,.testimonials-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.prop-card{
+overflow:hidden;border-radius:28px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);
+box-shadow:var(--shadow);transition:.35s ease
+}
+.prop-card:hover{transform:translateY(-8px);border-color:rgba(212,175,55,.35)}
+.prop-img{height:270px;position:relative;overflow:hidden}
+.prop-img img{width:100%;height:100%;object-fit:cover;transition:.5s ease}
+.prop-card:hover .prop-img img{transform:scale(1.06)}
+.price-tag{
+position:absolute;top:18px;left:18px;background:rgba(7,7,10,.72);backdrop-filter:blur(14px);
+padding:10px 14px;border-radius:999px;border:1px solid rgba(212,175,55,.35);color:var(--gold2);font-weight:700
+}
+.prop-body{padding:22px}
+.prop-body h3{font-size:1.4rem;margin-bottom:8px}
+.prop-body .loc{color:var(--gold2);margin-bottom:10px;font-weight:600}
+.prop-body p{color:var(--muted);line-height:1.7;margin-bottom:18px}
+.service-card,.testimonial-card{
+padding:26px;border-radius:24px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08)
+}
+.service-card h3,.testimonial-card h3{margin:12px 0 10px}
+.icon{
+width:54px;height:54px;border-radius:18px;display:grid;place-items:center;
+background:linear-gradient(135deg, rgba(212,175,55,.25), rgba(212,175,55,.07));
+border:1px solid rgba(212,175,55,.2);color:var(--gold2);font-size:24px
+}
+.testimonial-card p{color:var(--muted);line-height:1.8;margin-top:12px}
+.stars{color:var(--gold2);letter-spacing:2px}
+.contact-form{
+padding:28px
+}
+.form-group{display:grid;gap:14px}
+input,textarea{
+width:100%;padding:16px 18px;border-radius:16px;border:1px solid rgba(255,255,255,.1);
+background:rgba(0,0,0,.18);color:var(--text);outline:none;font-family:inherit
+}
+input:focus,textarea:focus{border-color:var(--gold)}
+textarea{min-height:140px;resize:vertical}
+.footer{
+padding:36px 0;border-top:1px solid rgba(255,255,255,.08);
+background:rgba(0,0,0,.22)
+}
+.footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap}
+.footer small{color:var(--muted)}
+.whatsapp-float{
+position:fixed;right:22px;bottom:22px;z-index:9999;width:62px;height:62px;border-radius:50%;
+display:grid;place-items:center;background:#25d366;color:#fff;font-size:30px;
+box-shadow:0 18px 40px rgba(37,211,102,.35);transition:.3s ease
+}
+.whatsapp-float:hover{transform:translateY(-4px) scale(1.03)}
+.muted{color:var(--muted)}
+.tag{
+display:inline-block;margin-top:12px;padding:8px 12px;border-radius:999px;
+background:rgba(212,175,55,.12);border:1px solid rgba(212,175,55,.18);color:var(--gold2);font-size:13px
+}
+.message-note{
+margin-top:12px;
+color:var(--gold2);
+font-size:14px;
+display:none;
+}
+@media (max-width: 980px){
+.hero-content,.about-grid,.contact-grid,.props-grid,.services-grid,.testimonials-grid{grid-template-columns:1fr}
+.nav-links{display:none}
+.hero{min-height:auto}
+.hero-content{padding:60px 0 70px}
+.prop-img{height:240px}
+}
+@media (max-width: 560px){
+.hero h1{font-size:2.7rem}
+.btn{width:100%}
+.hero-actions{flex-direction:column}
+.mini-grid{grid-template-columns:1fr}
+}
+</style>
 </head>
 <body>
-  <nav class="nav">
-    <div class="container nav-inner">
-      <div class="logo">
-        <div class="logo-mark">DD</div>
-        <span>Dream Doors Realty</span>
-      </div>
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#properties">Properties</a>
-        <a href="#services">Services</a>
-        <a href="#testimonials">Testimonials</a>
-        <a href="#contact">Contact</a>
-      </div>
-      <a class="btn primary" href="https://wa.me/918600022999?text=Hi%2C%20I'm%20interested%20in%20your%20properties" target="_blank">WhatsApp</a>
-    </div>
-  </nav>
+<nav class="nav">
+<div class="container nav-inner">
+<div class="logo">
+<div class="logo-mark">
+<img src="YOUR_LOGO_IMAGE_URL_HERE" alt="Dream Doors Realty Logo">
+</div>
+<span>Dream Doors Realty</span>
+</div>
+<div class="nav-links">
+<a href="#about">About</a>
+<a href="#properties">Properties</a>
+<a href="#services">Services</a>
+<a href="#testimonials">Testimonials</a>
+<a href="#contact">Contact</a>
+</div>
+<a class="btn primary" href="https://wa.me/918600022999?text=Hi%2C%20I'm%20interested%20in%20your%20properties" target="_blank">WhatsApp</a>
+</div>
+</nav>
 
-  <header class="hero">
-    <video autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1600&q=80">
-      <source src="https://cdn.coverr.co/videos/coverr-modern-luxury-apartment-1565791159090?download=1080" type="video/mp4">
-    </video>
-    <div class="hero-content">
-      <div data-aos="fade-up">
-        <span class="eyebrow">Premium real estate in Pune</span>
-        <h1>Find Your Dream Home in Pune</h1>
-        <p>Luxury flats, villas, and investment opportunities curated for Punekars with a refined, transparent, and elite buying experience.</p>
-        <div class="hero-actions">
-          <a class="btn primary" href="#properties">Explore Properties</a>
-          <a class="btn dark" href="https://wa.me/918600022999?text=Hi%2C%20I'm%20interested%20in%20your%20properties" target="_blank">Contact on WhatsApp</a>
-        </div>
-      </div>
+<header class="hero">
+<video autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1600&q=80">
+<source src="https://cdn.coverr.co/videos/coverr-modern-luxury-apartment-1565791159090?download=1080" type="video/mp4">
+</video>
+<div class="hero-content">
+<div data-aos="fade-up">
+<span class="eyebrow">Premium real estate in Pune</span>
+<h1>Find Your Dream Home in Pune</h1>
+<p>Luxury flats, villas, and investment opportunities curated for Punekars with a refined, transparent, and elite buying experience.</p>
+<div class="hero-actions">
+<a class="btn primary" href="#properties">Explore Properties</a>
+<a class="btn dark" href="https://wa.me/918600022999?text=Hi%2C%20I'm%20interested%20in%20your%20properties" target="_blank">Contact on WhatsApp</a>
+</div>
+</div>
 
-      <div class="hero-card" data-aos="zoom-in">
-        <h3 style="font-family:Montserrat,sans-serif;font-size:1.7rem;">Luxury. Trust. Results.</h3>
-        <p class="muted" style="margin-top:10px;line-height:1.8">Handpicked premium homes with the elegance and attention your investment deserves.</p>
-        <div class="mini-grid">
-          <div class="mini"><h4>15+</h4><span class="muted">Years Experience</span></div>
-          <div class="mini"><h4>100s</h4><span class="muted">Trusted Clients</span></div>
-          <div class="mini"><h4>Pune</h4><span class="muted">Market Expertise</span></div>
-          <div class="mini"><h4>Elite</h4><span class="muted">Property Curation</span></div>
-        </div>
-        <div class="tag">Dark luxury design with gold accents</div>
-      </div>
-    </div>
-  </header>
+<div class="hero-card" data-aos="zoom-in">
+<h3 style="font-family:Montserrat,sans-serif;font-size:1.7rem;">Luxury. Trust. Results.</h3>
+<p class="muted" style="margin-top:10px;line-height:1.8">Handpicked premium homes with the elegance and attention your investment deserves.</p>
+<div class="mini-grid">
+<div class="mini"><h4>15+</h4><span class="muted">Years Experience</span></div>
+<div class="mini"><h4>100s</h4><span class="muted">Trusted Clients</span></div>
+<div class="mini"><h4>Pune</h4><span class="muted">Market Expertise</span></div>
+<div class="mini"><h4>Elite</h4><span class="muted">Property Curation</span></div>
+</div>
+<div class="tag">Dark luxury design with gold accents</div>
+</div>
+</div>
+</header>
 
-  <section id="about">
-    <div class="container">
-      <div class="section-head" data-aos="fade-up">
-        <h2>About Dream Doors Realty</h2>
-        <p>Dream Doors Realty is built for clients who want more than just a property listing. We combine market knowledge, premium presentation, and personalized guidance to help you buy the right home in Pune.</p>
-      </div>
-      <div class="about-grid">
-        <div class="glass about-box" data-aos="fade-right">
-          <h3 style="font-size:1.6rem;margin-bottom:14px">Why clients trust us</h3>
-          <div class="feature-list">
-            <div class="feature-item"><div class="dot"></div><div><strong>15+ years of experience</strong><div class="muted">Proven expertise in Pune real estate.</div></div></div>
-            <div class="feature-item"><div class="dot"></div><div><strong>Trusted by hundreds of clients</strong><div class="muted">Honest support from enquiry to closing.</div></div></div>
-            <div class="feature-item"><div class="dot"></div><div><strong>Deep knowledge of Pune market</strong><div class="muted">Strong insights across premium locations.</div></div></div>
-          </div>
-        </div>
-        <div class="glass about-box" data-aos="fade-left">
-          <h3 style="font-size:1.6rem;margin-bottom:14px">About Founder</h3>
-          <p class="muted" style="line-height:1.9">
-            <strong style="color:var(--text)">Anwar Sayyed</strong> is a trusted real estate expert with over 15 years of experience in Pune.
-            He has successfully helped clients find the best flats, homes, and investment opportunities with honest guidance and deep market insights.
-          </p>
-          <div style="height:18px"></div>
-          <h3 style="font-size:1.35rem;margin-bottom:10px">Digital Support</h3>
-          <p class="muted" style="line-height:1.9">
-            Digital presence and marketing managed by <strong style="color:var(--text)">Sohail Shaikh</strong>, ensuring modern online visibility and seamless client experience.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
+<section id="about">
+<div class="container">
+<div class="section-head" data-aos="fade-up">
+<h2>About Dream Doors Realty</h2>
+<p>Dream Doors Realty is built for clients who want more than just a property listing. We combine market knowledge, premium presentation, and personalized guidance to help you buy the right home in Pune.</p>
+</div>
+<div class="about-grid">
+<div class="glass about-box" data-aos="fade-right">
+<h3 style="font-size:1.6rem;margin-bottom:14px">Why clients trust us</h3>
+<div class="feature-list">
+<div class="feature-item"><div class="dot"></div><div><strong>15+ years of experience</strong><div class="muted">Proven expertise in Pune real estate.</div></div></div>
+<div class="feature-item"><div class="dot"></div><div><strong>Trusted by hundreds of clients</strong><div class="muted">Honest support from enquiry to closing.</div></div></div>
+<div class="feature-item"><div class="dot"></div><div><strong>Deep knowledge of Pune market</strong><div class="muted">Strong insights across premium locations.</div></div></div>
+</div>
+</div>
+<div class="glass about-box" data-aos="fade-left">
+<h3 style="font-size:1.6rem;margin-bottom:14px">About Founder</h3>
+<p class="muted" style="line-height:1.9">
+<strong style="color:var(--text)">Anwar Sayyed</strong> is a trusted real estate expert with over 15 years of experience in Pune.
+He has successfully helped clients find the best flats, homes, and investment opportunities with honest guidance and deep market insights.
+</p>
+<div style="height:18px"></div>
+<h3 style="font-size:1.35rem;margin-bottom:10px">Digital Support</h3>
+<p class="muted" style="line-height:1.9">
+Digital presence and marketing managed by <strong style="color:var(--text)">Sohail Shaikh</strong>, ensuring modern online visibility and seamless client experience.
+</p>
+</div>
+</div>
+</div>
+</section>
 
-  <section id="properties">
-    <div class="container">
-      <div class="section-head" data-aos="fade-up">
-        <h2>Featured Properties</h2>
-        <p>Premium listings selected for clients who value style, location, comfort, and long-term appreciation.</p>
-      </div>
+<section id="properties">
+<div class="container">
+<div class="section-head" data-aos="fade-up">
+<h2>Featured Properties</h2>
+<p>Premium listings selected for clients who value style, location, comfort, and long-term appreciation.</p>
+</div>
 
-      <div class="props-grid">
-        <div class="prop-card" data-aos="fade-up">
-          <div class="prop-img">
-            <span class="price-tag">₹1.2 Cr</span>
-            <img src="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=1400&q=80" alt="3BHK Luxury Flat in Kharadi">
-          </div>
-          <div class="prop-body">
-            <h3>3BHK Luxury Flat</h3>
-            <div class="loc">Kharadi</div>
-            <p>Elegant modern interiors, premium amenities, and strong connectivity in one of Pune’s most desirable neighborhoods.</p>
-            <a class="btn primary" href="https://wa.me/918600022999?text=Hi%2C%20I'm%20interested%20in%20the%203BHK%20Luxury%20Flat%20in%20Kharadi" target="_blank">Enquire on WhatsApp</a>
-          </div>
-        </div>
+<div class="props-grid">
+<div class="prop-card" data-aos="fade-up">
+<div class="prop-img">
+<span class="price-tag">₹1.2 Cr</span>
+<img src="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=1400&q=80" alt="3BHK Luxury Flat in Kharadi">
+</div>
+<div class="prop-body">
+<h3>3BHK Luxury Flat</h3>
+<div class="loc">Kharadi</div>
+<p>Elegant modern interiors, premium amenities, and strong connectivity in one of Pune’s most desirable neighborhoods.</p>
+<a class="btn primary" href="https://wa.me/918600022999?text=Hi%2C%20I'm%20interested%20in%20the%203BHK%20Luxury%20Flat%20in%20Kharadi" target="_blank">Enquire on WhatsApp</a>
+</div>
+</div>
 
-        <div class="prop-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="prop-img">
-            <span class="price-tag">₹2.5 Cr</span>
-            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=80" alt="Luxury Villa in Baner">
-          </div>
-          <div class="prop-body">
-            <h3>Luxury Villa</h3>
-            <div class="loc">Baner</div>
-            <p>A refined villa with spacious living areas, landscaped surroundings, and an upscale lifestyle feel.</p>
-            <a class="btn primary" href="https://wa.me/918600022999?text=Hi%2C%20I'm%20interested%20in%20the%20Luxury%20Villa%20in%20Baner" target="_blank">Enquire on WhatsApp</a>
-          </div>
-        </div>
+<div class="prop-card" data-aos="fade-up" data-aos-delay="100">
+<div class="prop-img">
+<span class="price-tag">₹2.5 Cr</span>
+<img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=80" alt="Luxury Villa in Baner">
+</div>
+<div class="prop-body">
+<h3>Luxury Villa</h3>
+<div class="loc">Baner</div>
+<p>A refined villa with spacious living areas, landscaped surroundings, and an upscale lifestyle feel.</p>
+<a class="btn primary" href="https://wa.me/918600022999?text=Hi%2C%20I'm%20interested%20in%20the%20Luxury%20Villa%20in%20Baner" target="_blank">Enquire on WhatsApp</a>
+</div>
+</div>
 
-        <div class="prop-card" data-aos="fade-up" data-aos-delay="200">
-          <div class="prop-img">
-            <span class="price-tag">₹85L</span>
-            <img src="https://images.unsplash.com/photo-1572120360610-d971b9d7767c?auto=format&fit=crop&w=1400&q=80" alt="2BHK High Rise in Hinjewadi">
-          </div>
-          <div class="prop-body">
-            <h3>2BHK High Rise</h3>
-            <div class="loc">Hinjewadi</div>
-            <p>Modern high-rise living perfect for professionals seeking comfort, convenience, and future value.</p>
-            <a class="btn primary" href="https://wa.me/918600022999?text=Hi%2C%20I'm%20interested%20in%20the%202BHK%20High%20Rise%20in%20Hinjewadi" target="_blank">Enquire on WhatsApp</a>
-          </div>
-        </div>
+<div class="prop-card" data-aos="fade-up" data-aos-delay="200">
+<div class="prop-img">
+<span class="price-tag">₹85L</span>
+<img src="https://images.unsplash.com/photo-1572120360610-d971b9d7767c?auto=format&fit=crop&w=1400&q=80" alt="2BHK High Rise in Hinjewadi">
+</div>
+<div class="prop-body">
+<h3>2BHK High Rise</h3>
+<div class="loc">Hinjewadi</div>
+<p>Modern high-rise living perfect for professionals seeking comfort, convenience, and future value.</p>
+<a class="btn primary" href="https://wa.me/918600022999?text=Hi%2C%20I'm%20interested%20in%20the%202BHK%20High%20Rise%20in%20Hinjewadi" target="_blank">Enquire on WhatsApp</a>
+</div>
+</div>
 
-        <div class="prop-card" data-aos="fade-up" data-aos-delay="300">
-          <div class="prop-img">
-            <span class="price-tag">₹3.8 Cr</span>
-            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=80" alt="4BHK Penthouse in Koregaon Park">
-          </div>
-          <div class="prop-body">
-            <h3>4BHK Penthouse</h3>
-            <div class="loc">Koregaon Park</div>
-            <p>Exclusive penthouse living with premium finishes, open views, and a luxury address in Pune.</p>
-            <a class="btn primary" href="https://wa.me/918600022999?text=Hi%2C%20I'm%20interested%20in%20the%204BHK%20Penthouse%20in%20Koregaon%20Park" target="_blank">Enquire on WhatsApp</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+<div class="prop-card" data-aos="fade-up" data-aos-delay="300">
+<div class="prop-img">
+<span class="price-tag">₹3.8 Cr</span>
+<img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=80" alt="4BHK Penthouse in Koregaon Park">
+</div>
+<div class="prop-body">
+<h3>4BHK Penthouse</h3>
+<div class="loc">Koregaon Park</div>
+<p>Exclusive penthouse living with premium finishes, open views, and a luxury address in Pune.</p>
+<a class="btn primary" href="https://wa.me/918600022999?text=Hi%2C%20I'm%20interested%20in%20the%204BHK%20Penthouse%20in%20Koregaon%20Park" target="_blank">Enquire on WhatsApp</a>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-  <section id="services">
-    <div class="container">
-      <div class="section-head" data-aos="fade-up">
-        <h2>Services</h2>
-        <p>Focused real estate services designed to guide buyers, sellers, and investors with clarity and confidence.</p>
-      </div>
-      <div class="services-grid">
-        <div class="service-card" data-aos="fade-up">
-          <div class="icon">🏠</div>
-          <h3>Property Buying</h3>
-          <p class="muted">Premium support in choosing the right flat, villa, or penthouse in Pune.</p>
-        </div>
-        <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="icon">💼</div>
-          <h3>Property Selling</h3>
-          <p class="muted">Position your property with a premium presentation that attracts serious buyers.</p>
-        </div>
-        <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-          <div class="icon">📈</div>
-          <h3>Investment Guidance</h3>
-          <p class="muted">Smart location and value-based advice for long-term returns in Pune.</p>
-        </div>
-        <div class="service-card" data-aos="fade-up" data-aos-delay="300">
-          <div class="icon">📍</div>
-          <h3>Location-based Search</h3>
-          <p class="muted">Search by premium Pune locations like Kharadi, Baner, Wakad, Hadapsar, and Hinjewadi.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+<section id="services">
+<div class="container">
+<div class="section-head" data-aos="fade-up">
+<h2>Services</h2>
+<p>Focused real estate services designed to guide buyers, sellers, and investors with clarity and confidence.</p>
+</div>
+<div class="services-grid">
+<div class="service-card" data-aos="fade-up">
+<div class="icon">🏠</div>
+<h3>Property Buying</h3>
+<p class="muted">Premium support in choosing the right flat, villa, or penthouse in Pune.</p>
+</div>
+<div class="service-card" data-aos="fade-up" data-aos-delay="100">
+<div class="icon">💼</div>
+<h3>Property Selling</h3>
+<p class="muted">Position your property with a premium presentation that attracts serious buyers.</p>
+</div>
+<div class="service-card" data-aos="fade-up" data-aos-delay="200">
+<div class="icon">📈</div>
+<h3>Investment Guidance</h3>
+<p class="muted">Smart location and value-based advice for long-term returns in Pune.</p>
+</div>
+<div class="service-card" data-aos="fade-up" data-aos-delay="300">
+<div class="icon">📍</div>
+<h3>Location-based Search</h3>
+<p class="muted">Search by premium Pune locations like Kharadi, Baner, Wakad, Hadapsar, and Hinjewadi.</p>
+</div>
+</div>
+</div>
+</section>
 
-  <section id="testimonials">
-    <div class="container">
-      <div class="section-head" data-aos="fade-up">
-        <h2>Client Testimonials</h2>
-        <p>Premium styling, realistic feedback, and trust-focused messaging.</p>
-      </div>
-      <div class="testimonials-grid">
-        <div class="testimonial-card" data-aos="fade-up">
-          <div class="stars">★★★★★</div>
-          <h3>Priya M., Kharadi</h3>
-          <p>“Anwar Sir understood exactly what we wanted and guided us to a property that matched our budget and lifestyle perfectly.”</p>
-        </div>
-        <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="stars">★★★★★</div>
-          <h3>Rahul S., Baner</h3>
-          <p>“The presentation was excellent and the process felt smooth from start to finish. Truly premium service.”</p>
-        </div>
-        <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
-          <div class="stars">★★★★★</div>
-          <h3>Neha P., Hinjewadi</h3>
-          <p>“Very professional, honest, and helpful. We got a great investment property with clear market guidance.”</p>
-        </div>
-        <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
-          <div class="stars">★★★★★</div>
-          <h3>Amit R., Koregaon Park</h3>
-          <p>“Dream Doors Realty feels premium and reliable. The attention to detail immediately builds confidence.”</p>
-        </div>
-      </div>
-    </div>
-  </section>
+<section id="testimonials">
+<div class="container">
+<div class="section-head" data-aos="fade-up">
+<h2>Client Testimonials</h2>
+<p>Premium styling, realistic feedback, and trust-focused messaging.</p>
+</div>
+<div class="testimonials-grid">
+<div class="testimonial-card" data-aos="fade-up">
+<div class="stars">★★★★★</div>
+<h3>Priya M., Kharadi</h3>
+<p>“Anwar Sir understood exactly what we wanted and guided us to a property that matched our budget and lifestyle perfectly.”</p>
+</div>
+<div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+<div class="stars">★★★★★</div>
+<h3>Rahul S., Baner</h3>
+<p>“The presentation was excellent and the process felt smooth from start to finish. Truly premium service.”</p>
+</div>
+<div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+<div class="stars">★★★★★</div>
+<h3>Neha P., Hinjewadi</h3>
+<p>“Very professional, honest, and helpful. We got a great investment property with clear market guidance.”</p>
+</div>
+<div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+<div class="stars">★★★★★</div>
+<h3>Amit R., Koregaon Park</h3>
+<p>“Dream Doors Realty feels premium and reliable. The attention to detail immediately builds confidence.”</p>
+</div>
+</div>
+</div>
+</section>
 
-  <section id="contact">
-    <div class="container">
-      <div class="section-head" data-aos="fade-up">
-        <h2>Contact Us</h2>
-        <p>Reach out for premium property enquiries, site visits, and investment advice.</p>
-      </div>
-      <div class="contact-grid">
-        <div class="glass about-box" data-aos="fade-right">
-          <h3 style="font-size:1.6rem;margin-bottom:14px">Contact Details</h3>
-          <p class="muted" style="line-height:2">
-            Phone: <strong style="color:var(--text)">9850226220</strong><br>
-            Email: <strong style="color:var(--text)">sayyed.anwar651@gmail.com</strong><br>
-            Location: <strong style="color:var(--text)">Azad Nagar, Ghorpadi Gaon, Pune – 411001</strong>
-          </p>
-          <div style="height:18px"></div>
-          <a class="btn primary" href="https://wa.me/918600022999?text=Hi%2C%20I'm%20interested%20in%20your%20properties" target="_blank">Message on WhatsApp</a>
-        </div>
-        <div class="glass contact-form" data-aos="fade-left">
-          <h3 style="font-size:1.6rem;margin-bottom:14px">Send an Enquiry</h3>
-          <form>
-            <div class="form-group">
-              <input type="text" placeholder="Your Name" />
-              <input type="tel" placeholder="Phone Number" />
-              <input type="email" placeholder="Email Address" />
-              <textarea placeholder="Tell us what kind of property you are looking for..."></textarea>
-              <button type="button" class="btn primary">Submit Enquiry</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
+<section id="contact">
+<div class="container">
+<div class="section-head" data-aos="fade-up">
+<h2>Contact Us</h2>
+<p>Reach out for premium property enquiries, site visits, and investment advice.</p>
+</div>
+<div class="contact-grid">
+<div class="glass about-box" data-aos="fade-right">
+<h3 style="font-size:1.6rem;margin-bottom:14px">Contact Details</h3>
+<p class="muted" style="line-height:2">
+Phone: <strong style="color:var(--text)">918600022999</strong><br>
+Email: <strong style="color:var(--text)">sayyed.anwar651@gmail.com</strong><br>
+Location: <strong style="color:var(--text)">Azad Nagar, Ghorpadi Gaon, Pune – 411001</strong>
+</p>
+<div style="height:18px"></div>
+<a class="btn primary" href="https://wa.me/918600022999?text=Hi%2C%20I'm%20interested%20in%20your%20properties" target="_blank">Message on WhatsApp</a>
+</div>
+<div class="glass contact-form" data-aos="fade-left">
+<h3 style="font-size:1.6rem;margin-bottom:14px">Send an Enquiry</h3>
+<form id="contact-form">
+<div class="form-group">
+<input type="text" name="name" placeholder="Your Name" required />
+<input type="tel" name="phone" placeholder="Phone Number" required />
+<input type="email" name="email" placeholder="Email Address" required />
+<textarea name="message" placeholder="Tell us what kind of property you are looking for..." required></textarea>
+<button type="submit" class="btn primary">Submit Enquiry</button>
+</div>
+</form>
+<div class="message-note" id="form-status"></div>
+</div>
+</div>
+</div>
+</section>
 
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div class="logo">
-        <div class="logo-mark">DD</div>
-        <div>
-          <div style="font-weight:700">Dream Doors Realty</div>
-          <small>Helping Punekars Find Their Perfect Homes</small>
-        </div>
-      </div>
-      <small>Luxury real estate with trust, style, and precision.</small>
-    </div>
-  </footer>
+<footer class="footer">
+<div class="container footer-inner">
+<div class="logo">
+<div class="logo-mark">
+<img src="YOUR_LOGO_IMAGE_URL_HERE" alt="Dream Doors Realty Logo">
+</div>
+<div>
+<div style="font-weight:700">Dream Doors Realty</div>
+<small>Helping Punekars Find Their Perfect Homes</small>
+</div>
+</div>
+<small>Luxury real estate with trust, style, and precision.</small>
+</div>
+</footer>
 
-  <a class="whatsapp-float" href="https://wa.me/918600022999?text=Hi%2C%20I'm%20interested%20in%20your%20properties" target="_blank">🟢</a>
+<a class="whatsapp-float" href="https://wa.me/918600022999?text=Hi%2C%20I'm%20interested%20in%20your%20properties" target="_blank" aria-label="WhatsApp">
+<i class="fa-brands fa-whatsapp"></i>
+</a>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({ duration: 900, once: true, offset: 80 });
-  </script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+AOS.init({ duration: 900, once: true, offset: 80 });
+
+emailjs.init({
+publicKey: "YOUR_EMAILJS_PUBLIC_KEY"
+});
+
+const form = document.getElementById("contact-form");
+const statusBox = document.getElementById("form-status");
+
+form.addEventListener("submit", function(e) {
+e.preventDefault();
+statusBox.style.display = "block";
+statusBox.style.color = "#f0d67a";
+statusBox.textContent = "Sending enquiry...";
+
+emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", this)
+.then(() => {
+statusBox.style.color = "#7CFF9B";
+statusBox.textContent = "Enquiry sent successfully. We will contact you soon.";
+form.reset();
+}, (error) => {
+statusBox.style.color = "#ff8b8b";
+statusBox.textContent = "Failed to send enquiry. Please try again.";
+console.error("EmailJS error:", error);
+});
+});
+</script>
 </body>
 </html>
