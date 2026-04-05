@@ -193,32 +193,18 @@ color:var(--gold2);
 font-size:14px;
 display:none;
 }
-.google-form-wrapper {
-    width: 100%;
-    border-radius: 16px;
-    overflow: hidden;
-    background: rgba(255,255,255,0.03);
-}
-.google-form-wrapper iframe {
-    width: 100%;
-    height: 600px;
-    border: none;
-    background: transparent;
-}
 @media (max-width: 980px){
 .hero-content,.about-grid,.contact-grid,.props-grid,.services-grid,.testimonials-grid{grid-template-columns:1fr}
 .nav-links{display:none}
 .hero{min-height:auto}
 .hero-content{padding:60px 0 70px}
 .prop-img{height:240px}
-.google-form-wrapper iframe {height: 550px;}
 }
 @media (max-width: 560px){
 .hero h1{font-size:2.7rem}
 .btn{width:100%}
 .hero-actions{flex-direction:column}
 .mini-grid{grid-template-columns:1fr}
-.google-form-wrapper iframe {height: 500px;}
 }
 </style>
 </head>
@@ -227,8 +213,8 @@ display:none;
 <div class="container nav-inner">
 <div class="logo">
 <div class="logo-mark">
-    <!-- DREAM DOORS REALTY OFFICIAL LOGO -->
-    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCABQAFADASIAAhEBAxEB/8QAHQAAAQQDAQEAAAAAAAAAAAAABQMEBgcAAggBCf/EADQQAAIBAwMCBAMHAwUBAAAAAAECAwAEEQUSIQYxE0FRYQcicRQjMoGRofBCUrEVM2JyweH/xAAYAQADAQEAAAAAAAAAAAAAAAAAAQIDBP/EACARAQEAAgICAwEBAAAAAAAAAAABAhEDMRIhQQQyYRP/2gAMAwEAAhEDEQA/APsUV6a8xWj9oqx2B5pV1XNGdTz3Fpm3tJBFtGDIo/OfM+1D30i8dg3iRgnnKk8/xScCbUwOtGLO+njgRZQtyi+uQw/egsmlXqqBGVfJ7mgeHrHqTT2QfaRLbuPzLkfvQ/U9T0+5GYtXjiYdip2n96YLY30PEtmWP/ANgZ/Oo5qmm20m//AG8IbOMbhxRvY11Vz2Gs30ZCJKJY/Z9w/wB6M2PUkDqBdxPEf1J5/pVaWWnWwbY1y4wR/rUotdNtXiw9zOfqy0bPSCXc0V2fFh2SN6ng/vQtJ5YySjMnzB4olDY2NvzHZzN83mx+1ZNYRXMZ8DTQn/UuP5oaK0J19EYksWU+f6SKFzW8sbHcGH8/pR2TRp5cFbWFSO2Jf8Aimd1o14zZB2gey5/amRlZ2ck7DYjMPUZonFp9yg3FWjA82HH8UzU6lYAKsU+B5I+BWkd7qEkjbrOd8+3NCpqkAIIEbuPk2KJ2er2Ef/AOoY1H6ZRz/OaAgD2EW7CxTEjuAM0pbQeCMxxSh/VlP8UbtmFwxa1mOP+k/7GlZ7KaUg+K+e+CcUB2h/0UjLnHFHnVaI2drtYMFz5ZxTSKYG8gC2MqAqD+/8A3TaaMTI8e4hWBU49DQy7+8d5IY3LDv2p3LtN1iL9mO80m9jPAHkI2T6mtX8a1YkxpH5BEXA/WnqLJEeQAfsK9LMff96NkYXU8bMXkRjjnBIA/WlY7qMjA25+dN1kPfYR/K1qI4dzblYsfMsaIWnYvVQEDHp3pWK+UEndx5+VDI4oVH+0ftwKXjQ7eY1A/ajY06HsPvNR3n8CZA9MUTiPFNLFdoQ+oBp2h4oTO0sBzTS6hYc+WDS4NbNj1oByhynbFe07tJAQR5U5J9jRZWw1H//Z" alt="Dream Doors Realty Logo">
+<!-- OFFICIAL LOGO: DREAM DOORS REALTY (embedded base64 from uploaded image) -->
+<img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCABQAFADASIAAhEBAxEB/8QAHQAAAQQDAQEAAAAAAAAAAAAABQMEBgcAAggBCf/EADQQAAIBAwMCBAMHAwUBAAAAAAECAwAEEQUSIQYxE0FRYQcicRQjMoGRofBCUrEVM2JyweH/xAAYAQADAQEAAAAAAAAAAAAAAAAAAQIDBP/EACARAQEAAgICAwEBAAAAAAAAAAABAhEDMRIhQQQyYRP/2gAMAwEAAhEDEQA/APsUV6a8xWj9oqx2B5pV1XNGdTz3Fpm3tJBFtGDIo/OfM+1D30i8dg3iRgnnKk8/xScCbUwOtGLO+njgRZQtyi+uQw/egsmlXqqBGVfJ7mgeHrHqTT2QfaRLbuPzLkfvQ/U9T0+5GYtXjiYdip2n96YLY30PEtmWP/ANgZ/Oo5qmm20m//AG8IbOMbhxRvY11Vz2Gs30ZCJKJY/Z9w/wB6M2PUkDqBdxPEf1J5/pVaWWnWwbY1y4wR/rUotdNtXiw9zOfqy0bPSCXc0V2fFh2SN6ng/vQtJ5YySjMnzB4olDY2NvzHZzN83mx+1ZNYRXMZ8DTQn/UuP5oaK0J19EYksWU+f6SKFzW8sbHcGH8/pR2TRp5cFbWFSO2Jf8Aimd1o14zZB2gey5/amRlZ2ck7DYjMPUZonFp9yg3FWjA82HH8UzU6lYAKsU+B5I+BWkd7qEkjbrOd8+3NCpqkAIIEbuPk2KJ2er2Ef/AOoY1H6ZRz/OaAgD2EW7CxTEjuAM0pbQeCMxxSh/VlP8UbtmFwxa1mOP+k/7GlZ7KaUg+K+e+CcUB2h/0UjLnHFHnVaI2drtYMFz5ZxTSKYG8gC2MqAqD+/8A3TaaMTI8e4hWBU49DQy7+8d5IY3LDv2p3LtN1iL9mO80m9jPAHkI2T6mtX8a1YkxpH5BEXA/WnqLJEeQAfsK9LMff96NkYXU8bMXkRjjnBIA/WlY7qMjA25+dN1kPfYR/K1qI4dzblYsfMsaIWnYvVQEDHp3pWK+UEndx5+VDI4oVH+0ftwKXjQ7eY1A/ajY06HsPvNR3n8CZA9MUTiPFNLFdoQ+oBp2h4oTO0sBzTS6hYc+WDS4NbNj1oByhynbFe07tJAQR5U5J9jRZWw1H//Z" alt="Dream Doors Realty Logo">
 </div>
 <span>Dream Doors Realty</span>
 </div>
@@ -407,22 +393,22 @@ Digital presence and marketing managed by <strong style="color:var(--text)">Soha
 <div class="testimonial-card" data-aos="fade-up">
 <div class="stars">★★★★★</div>
 <h3>Priya M., Kharadi</h3>
-<p>"Anwar Sir understood exactly what we wanted and guided us to a property that matched our budget and lifestyle perfectly."</p>
+<p>“Anwar Sir understood exactly what we wanted and guided us to a property that matched our budget and lifestyle perfectly.”</p>
 </div>
 <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
 <div class="stars">★★★★★</div>
 <h3>Rahul S., Baner</h3>
-<p>"The presentation was excellent and the process felt smooth from start to finish. Truly premium service."</p>
+<p>“The presentation was excellent and the process felt smooth from start to finish. Truly premium service.”</p>
 </div>
 <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
 <div class="stars">★★★★★</div>
 <h3>Neha P., Hinjewadi</h3>
-<p>"Very professional, honest, and helpful. We got a great investment property with clear market guidance."</p>
+<p>“Very professional, honest, and helpful. We got a great investment property with clear market guidance.”</p>
 </div>
 <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
 <div class="stars">★★★★★</div>
 <h3>Amit R., Koregaon Park</h3>
-<p>"Dream Doors Realty feels premium and reliable. The attention to detail immediately builds confidence."</p>
+<p>“Dream Doors Realty feels premium and reliable. The attention to detail immediately builds confidence.”</p>
 </div>
 </div>
 </div>
@@ -445,20 +431,18 @@ Location: <strong style="color:var(--text)">Azad Nagar, Ghorpadi Gaon, Pune – 
 <div style="height:18px"></div>
 <a class="btn primary" href="https://wa.me/918600022999?text=Hi%2C%20I'm%20interested%20in%20your%20properties" target="_blank">Message on WhatsApp</a>
 </div>
-
-<!-- GOOGLE FORM EMBED - Replace YOUR_FORM_ID with actual Google Form ID -->
 <div class="glass contact-form" data-aos="fade-left">
 <h3 style="font-size:1.6rem;margin-bottom:14px">Send an Enquiry</h3>
-<div class="google-form-wrapper">
-    <iframe src="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true" 
-            title="Property Enquiry Form"
-            frameborder="0" 
-            marginheight="0" 
-            marginwidth="0">
-        Loading…
-    </iframe>
+<form id="contact-form">
+<div class="form-group">
+<input type="text" name="name" placeholder="Your Name" required />
+<input type="tel" name="phone" placeholder="Phone Number" required />
+<input type="email" name="email" placeholder="Email Address" required />
+<textarea name="message" placeholder="Tell us what kind of property you are looking for..." required></textarea>
+<button type="submit" class="btn primary">Submit Enquiry</button>
 </div>
-<p class="muted" style="font-size: 12px; text-align: center; margin-top: 12px;">We'll get back to you within 24 hours</p>
+</form>
+<div class="message-note" id="form-status"></div>
 </div>
 </div>
 </div>
@@ -468,8 +452,8 @@ Location: <strong style="color:var(--text)">Azad Nagar, Ghorpadi Gaon, Pune – 
 <div class="container footer-inner">
 <div class="logo">
 <div class="logo-mark">
-    <!-- DREAM DOORS REALTY OFFICIAL LOGO (same in footer) -->
-    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCABQAFADASIAAhEBAxEB/8QAHQAAAQQDAQEAAAAAAAAAAAAABQMEBgcAAggBCf/EADQQAAIBAwMCBAMHAwUBAAAAAAECAwAEEQUSIQYxE0FRYQcicRQjMoGRofBCUrEVM2JyweH/xAAYAQADAQEAAAAAAAAAAAAAAAAAAQIDBP/EACARAQEAAgICAwEBAAAAAAAAAAABAhEDMRIhQQQyYRP/2gAMAwEAAhEDEQA/APsUV6a8xWj9oqx2B5pV1XNGdTz3Fpm3tJBFtGDIo/OfM+1D30i8dg3iRgnnKk8/xScCbUwOtGLO+njgRZQtyi+uQw/egsmlXqqBGVfJ7mgeHrHqTT2QfaRLbuPzLkfvQ/U9T0+5GYtXjiYdip2n96YLY30PEtmWP/ANgZ/Oo5qmm20m//AG8IbOMbhxRvY11Vz2Gs30ZCJKJY/Z9w/wB6M2PUkDqBdxPEf1J5/pVaWWnWwbY1y4wR/rUotdNtXiw9zOfqy0bPSCXc0V2fFh2SN6ng/vQtJ5YySjMnzB4olDY2NvzHZzN83mx+1ZNYRXMZ8DTQn/UuP5oaK0J19EYksWU+f6SKFzW8sbHcGH8/pR2TRp5cFbWFSO2Jf8Aimd1o14zZB2gey5/amRlZ2ck7DYjMPUZonFp9yg3FWjA82HH8UzU6lYAKsU+B5I+BWkd7qEkjbrOd8+3NCpqkAIIEbuPk2KJ2er2Ef/AOoY1H6ZRz/OaAgD2EW7CxTEjuAM0pbQeCMxxSh/VlP8UbtmFwxa1mOP+k/7GlZ7KaUg+K+e+CcUB2h/0UjLnHFHnVaI2drtYMFz5ZxTSKYG8gC2MqAqD+/8A3TaaMTI8e4hWBU49DQy7+8d5IY3LDv2p3LtN1iL9mO80m9jPAHkI2T6mtX8a1YkxpH5BEXA/WnqLJEeQAfsK9LMff96NkYXU8bMXkRjjnBIA/WlY7qMjA25+dN1kPfYR/K1qI4dzblYsfMsaIWnYvVQEDHp3pWK+UEndx5+VDI4oVH+0ftwKXjQ7eY1A/ajY06HsPvNR3n8CZA9MUTiPFNLFdoQ+oBp2h4oTO0sBzTS6hYc+WDS4NbNj1oByhynbFe07tJAQR5U5J9jRZWw1H//Z" alt="Dream Doors Realty Logo">
+<!-- OFFICIAL LOGO: Dream Doors Realty (identical embedded image for consistency) -->
+<img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCABQAFADASIAAhEBAxEB/8QAHQAAAQQDAQEAAAAAAAAAAAAABQMEBgcAAggBCf/EADQQAAIBAwMCBAMHAwUBAAAAAAECAwAEEQUSIQYxE0FRYQcicRQjMoGRofBCUrEVM2JyweH/xAAYAQADAQEAAAAAAAAAAAAAAAAAAQIDBP/EACARAQEAAgICAwEBAAAAAAAAAAABAhEDMRIhQQQyYRP/2gAMAwEAAhEDEQA/APsUV6a8xWj9oqx2B5pV1XNGdTz3Fpm3tJBFtGDIo/OfM+1D30i8dg3iRgnnKk8/xScCbUwOtGLO+njgRZQtyi+uQw/egsmlXqqBGVfJ7mgeHrHqTT2QfaRLbuPzLkfvQ/U9T0+5GYtXjiYdip2n96YLY30PEtmWP/ANgZ/Oo5qmm20m//AG8IbOMbhxRvY11Vz2Gs30ZCJKJY/Z9w/wB6M2PUkDqBdxPEf1J5/pVaWWnWwbY1y4wR/rUotdNtXiw9zOfqy0bPSCXc0V2fFh2SN6ng/vQtJ5YySjMnzB4olDY2NvzHZzN83mx+1ZNYRXMZ8DTQn/UuP5oaK0J19EYksWU+f6SKFzW8sbHcGH8/pR2TRp5cFbWFSO2Jf8Aimd1o14zZB2gey5/amRlZ2ck7DYjMPUZonFp9yg3FWjA82HH8UzU6lYAKsU+B5I+BWkd7qEkjbrOd8+3NCpqkAIIEbuPk2KJ2er2Ef/AOoY1H6ZRz/OaAgD2EW7CxTEjuAM0pbQeCMxxSh/VlP8UbtmFwxa1mOP+k/7GlZ7KaUg+K+e+CcUB2h/0UjLnHFHnVaI2drtYMFz5ZxTSKYG8gC2MqAqD+/8A3TaaMTI8e4hWBU49DQy7+8d5IY3LDv2p3LtN1iL9mO80m9jPAHkI2T6mtX8a1YkxpH5BEXA/WnqLJEeQAfsK9LMff96NkYXU8bMXkRjjnBIA/WlY7qMjA25+dN1kPfYR/K1qI4dzblYsfMsaIWnYvVQEDHp3pWK+UEndx5+VDI4oVH+0ftwKXjQ7eY1A/ajY06HsPvNR3n8CZA9MUTiPFNLFdoQ+oBp2h4oTO0sBzTS6hYc+WDS4NbNj1oByhynbFe07tJAQR5U5J9jRZWw1H//Z" alt="Dream Doors Realty Logo">
 </div>
 <div>
 <div style="font-weight:700">Dream Doors Realty</div>
@@ -485,8 +469,34 @@ Location: <strong style="color:var(--text)">Azad Nagar, Ghorpadi Gaon, Pune – 
 </a>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
 AOS.init({ duration: 900, once: true, offset: 80 });
+
+emailjs.init({
+publicKey: "YOUR_EMAILJS_PUBLIC_KEY"
+});
+
+const form = document.getElementById("contact-form");
+const statusBox = document.getElementById("form-status");
+
+form.addEventListener("submit", function(e) {
+e.preventDefault();
+statusBox.style.display = "block";
+statusBox.style.color = "#f0d67a";
+statusBox.textContent = "Sending enquiry...";
+
+emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", this)
+.then(() => {
+statusBox.style.color = "#7CFF9B";
+statusBox.textContent = "Enquiry sent successfully. We will contact you soon.";
+form.reset();
+}, (error) => {
+statusBox.style.color = "#ff8b8b";
+statusBox.textContent = "Failed to send enquiry. Please try again.";
+console.error("EmailJS error:", error);
+});
+});
 </script>
 </body>
 </html>
